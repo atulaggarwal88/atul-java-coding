@@ -15,6 +15,11 @@ public class TestRemoveArrayDuplicates {
 		Integer[] i = {3,3,5,7,3};
 		String[] s = {"abc", "abc", "abc", "pqr", "abc", "abc"};
 		Character[] c = {'1', '1', 's', 'd', 'q', 'a', '1', '2', 's', 'd', 'q', 'a'};
+		System.out.println("Original Array: " + Arrays.toString(s));
+		System.out.println("Original Array: " + Arrays.toString(i));
+		System.out.println("Original Array: " + Arrays.toString(c));
+		
+		System.out.println("After removing duplicates");
 		System.out.println(Arrays.toString(getDistinctArray_withoutAPI(s)));
 		System.out.println(Arrays.toString(getDistinctArray_withoutAPI(i)));
 		System.out.println(Arrays.toString(getDistinctArray_withoutAPI(c)));
