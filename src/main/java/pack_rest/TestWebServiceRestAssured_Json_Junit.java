@@ -158,7 +158,7 @@ public class TestWebServiceRestAssured_Json_Junit {
 //		setContentType(ContentType.JSON).
 		addQueryParam("limit", "10"); //added query param		
 		RequestSpecification addRequestSpec = requestSpecBuilder.build();
-		System.out.println();
+		
 //		requestSpecBuilder.setBaseUri("http://ergast.com/api/f1/");
 //		
 		RequestSpecification httpRequest = RestAssured.given().spec(addRequestSpec).contentType(ContentType.JSON);		
