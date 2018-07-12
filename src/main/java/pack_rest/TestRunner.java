@@ -10,8 +10,7 @@ public class TestRunner {
 		// TODO Auto-generated method stub
 		Result result = JUnitCore.runClasses(TestWebServiceRestAssured_Json_Junit.class);					
 		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.getTrace());
-//			System.out.println(failure.toString());					
+			System.out.println(failure.getTrace());					
 		}		
 		System.out.println("Result = " +result.wasSuccessful());
 

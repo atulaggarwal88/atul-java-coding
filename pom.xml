@@ -5,6 +5,11 @@
 	<artifactId>com.practice.coding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>InterviewCoding</name>
+	
+	<properties>
+		<rest-assured.version>3.1.0</rest-assured.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -97,40 +102,59 @@
 		<!-- END - Added to test rest calls -->
 
 		<!-- RestAssured API -->
-		<!-- Added to test rest calls -->
-		<dependency>
-			<groupId>io.rest-assured</groupId>
-			<artifactId>rest-assured</artifactId>
-			<version>3.0.2</version>
-			<!-- <version>2.8.0</version> -->
-			<scope>test</scope>
-		</dependency>
+		<!-- Added to test rest calls -->		
 
-		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
-		<!-- Required for RestAssured -->
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<version>1.3</version>
-			<scope>test</scope>
-		</dependency>
+			<!-- <groupId>com.jayway.restassured</groupId> <artifactId>rest-assured</artifactId> 
+				<version>2.1.0</version> <version>2.8.0</version> <scope>test</scope> <exclusions> 
+				<exclusion> <groupId>org.codehaus.groovy</groupId> <artifactId>groovy</artifactId> 
+				</exclusion> </exclusions> </dependency> -->
 
-		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-		<!-- On running rest assured tests from JUnit runner file, tests were failing 
-			with NoClassDefFound error, on RestAssured.baseURI = baseUrl; Hence assing 
-			GSon, This is required by rest assured as GSon is optional in pom of rest 
-			assured. -->
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.5</version>
-		</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>rest-assured</artifactId>
+				<version>${rest-assured.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>json-path</artifactId>
+				<version>${rest-assured.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>xml-path</artifactId>
+				<version>${rest-assured.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.rest-assured</groupId>
+				<artifactId>json-schema-validator</artifactId>
+				<version>${rest-assured.version}</version>
+			</dependency>
 
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>2.4.5</version>
-		</dependency>
+			<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+			<!-- Required for RestAssured -->
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>1.3</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+			<!-- On running rest assured tests from JUnit runner file, tests were 
+				failing with NoClassDefFound error, on RestAssured.baseURI = baseUrl; Hence 
+				assing GSon, This is required by rest assured as GSon is optional in pom 
+				of rest assured. -->
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.8.5</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>2.2.0</version>
+			</dependency>
 
 	</dependencies>
 	<build>
