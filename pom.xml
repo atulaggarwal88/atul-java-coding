@@ -5,11 +5,11 @@
 	<artifactId>com.practice.coding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>InterviewCoding</name>
-	
+
 	<properties>
 		<rest-assured.version>3.1.0</rest-assured.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.8.1</version>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -57,32 +57,13 @@
 			<version>0.2.3</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<version>2.18</version>
-		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.beust</groupId>
 			<artifactId>jcommander</artifactId>
 			<version>1.48</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>3.15</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.15</version>
-		</dependency>
+		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
+			<version>3.17</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
+			<artifactId>poi-ooxml</artifactId> <version>3.17</version> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
 		<!-- START - Added to test rest calls -->
@@ -102,70 +83,91 @@
 		<!-- END - Added to test rest calls -->
 
 		<!-- RestAssured API -->
-		<!-- Added to test rest calls -->		
+		<!-- Added to test rest calls -->
 
-			<!-- <groupId>com.jayway.restassured</groupId> <artifactId>rest-assured</artifactId> 
-				<version>2.1.0</version> <version>2.8.0</version> <scope>test</scope> <exclusions> 
-				<exclusion> <groupId>org.codehaus.groovy</groupId> <artifactId>groovy</artifactId> 
-				</exclusion> </exclusions> </dependency> -->
+		<!-- <groupId>com.jayway.restassured</groupId> <artifactId>rest-assured</artifactId> 
+			<version>2.1.0</version> <version>2.8.0</version> <scope>test</scope> <exclusions> 
+			<exclusion> <groupId>org.codehaus.groovy</groupId> <artifactId>groovy</artifactId> 
+			</exclusion> </exclusions> </dependency> -->
 
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>rest-assured</artifactId>
-				<version>${rest-assured.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>json-path</artifactId>
-				<version>${rest-assured.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>xml-path</artifactId>
-				<version>${rest-assured.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.rest-assured</groupId>
-				<artifactId>json-schema-validator</artifactId>
-				<version>${rest-assured.version}</version>
-			</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>xml-path</artifactId>
+			<version>${rest-assured.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>${rest-assured.version}</version>
+		</dependency>
 
-			<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
-			<!-- Required for RestAssured -->
-			<dependency>
-				<groupId>org.hamcrest</groupId>
-				<artifactId>hamcrest-all</artifactId>
-				<version>1.3</version>
-				<scope>test</scope>
-			</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+		<!-- Required for RestAssured -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
 
-			<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-			<!-- On running rest assured tests from JUnit runner file, tests were 
-				failing with NoClassDefFound error, on RestAssured.baseURI = baseUrl; Hence 
-				assing GSon, This is required by rest assured as GSon is optional in pom 
-				of rest assured. -->
-			<dependency>
-				<groupId>com.google.code.gson</groupId>
-				<artifactId>gson</artifactId>
-				<version>2.8.5</version>
-			</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<!-- On running rest assured tests from JUnit runner file, tests were failing 
+			with NoClassDefFound error, on RestAssured.baseURI = baseUrl; Hence assing 
+			GSon, This is required by rest assured as GSon is optional in pom of rest 
+			assured. -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.codehaus.groovy</groupId>
-				<artifactId>groovy-all</artifactId>
-				<version>2.2.0</version>
-			</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.7</version>
+		</dependency>
 
 	</dependencies>
 	<build>
+		<!-- <sourceDirectory>src/main/java</sourceDirectory> <resources> <resource> 
+			<directory>src/main/resources</directory> <excludes> <exclude>**/*.java</exclude> 
+			</excludes> </resource> <resource> <directory>src/test/resources</directory> 
+			<excludes> <exclude>**/*.java</exclude> </excludes> </resource> </resources> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version> <!-- or whatever current version -->
+				<version>3.7.0</version> <!-- or whatever current version -->
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<!-- Added maven surefire plugin for 1. registering listener -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.21.0</version>
+				<configuration>
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>com.listeners.CustomJunitListener</value>
+						</property>
+					</properties>
+					<outputName>Rest Assured Report Test Case</outputName>
+					<!-- <groups>com.annotations.FunctionalTest</groups> -->
 				</configuration>
 			</plugin>
 		</plugins>
