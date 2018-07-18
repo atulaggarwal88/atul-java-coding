@@ -1,6 +1,8 @@
 package pack_selenium;
 
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.*;
@@ -8,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.*;
@@ -32,7 +33,7 @@ public class TestFacebookLogin {
 		String str_ExpectedTitle = "Facebook – log in or sign up";
 		String str_ActualTitle = driver.getTitle();
 		
-		Assert.assertTrue(str_ExpectedTitle.equals(str_ActualTitle),"URL launch failed");	
+		Assert.assertTrue("URL launch failed", str_ExpectedTitle.equals(str_ActualTitle));	
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		WebElement txtBx_Email = wait.until(ExpectedConditions.visibilityOfElementLocated(byTxtBx_Email));
 		txtBx_Email.sendKeys("<user name>");
@@ -49,7 +50,7 @@ public class TestFacebookLogin {
 		}
 				
 		WebElement menuItm_Logout = wait.until(ExpectedConditions.elementToBeClickable(byMenuItm_Logout));
-		Assert.assertTrue(menuItm_Logout.getText().contains("Log Out"), "Login failed");
+		Assert.assertTrue("Login failed", menuItm_Logout.getText().contains("Log Out"));
 		
 		WebElement img_Header = driver.findElement(byImg_Header);
 		
@@ -58,7 +59,7 @@ public class TestFacebookLogin {
 		action.perform();
 		
 		String actualToolTip = img_Header.getAttribute("title");
-		Assert.assertTrue(actualToolTip.contains("Profile"), "Actual value of tooltip: " + actualToolTip + "Expected: Profile");
+		Assert.assertTrue("Actual value of tooltip: " + actualToolTip + "Expected: Profile", actualToolTip.contains("Profile"));
 						
 		
 	}
